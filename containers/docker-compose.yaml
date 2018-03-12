@@ -8,13 +8,13 @@ services:
     ports:
       - "88:88"
     volumes:
-        - "./nginx/volume:/code"
+        - "./nginx/web/src:/var/www/public"
     links:
       - nodejs-server:nodejs-server
 
   nodejs-server:
       build: ./nodejs-server
       volumes:
-        - "./nodejs-server/app-vol:/opt/nodejs/emp"
+         - "./nodejs-server/app-vol:/opt/nodejs/emp"
       ports:
         - "5003:5003"
